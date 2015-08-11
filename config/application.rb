@@ -24,6 +24,8 @@ module Tourney
     config.active_record.raise_in_transactional_callbacks = true
 
     # Remove tests because I like to live on the wild side
-    config.generators.test_framework false
+    config.generators do |g|
+      g.test_framework  false
+    end
   end
 end
