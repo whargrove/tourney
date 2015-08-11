@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'users#index' # TODO: This is only temporary
+  root 'tournaments#index'
 
   # Registration
   get 'signup', to: 'users#new', as: 'signup'
@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   get 'users', to: 'users#index'
   post 'users', to: 'users#create'
   get '/users/:id', to: 'users#show', as: 'user'
+
+  resources :tournaments
 
 end
