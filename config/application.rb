@@ -25,7 +25,8 @@ module Tourney
 
     # Remove tests because I like to live on the wild side
     config.generators do |g|
-      g.test_framework  false
+      g.hidden_namespaces << 'test_unit'
+      g.test_framework    false
     end
   end
 end
