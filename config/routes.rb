@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
   # Authentication
   get 'login', to: 'sessions#new', as: 'login'
-  delete 'logout', to: 'sessions#destroy', as: 'logout'
+  post 'login', to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
 
   # Users
   get 'users', to: 'users#index'
