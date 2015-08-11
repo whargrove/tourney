@@ -22,5 +22,8 @@ module Tourney
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Remove tests because I like to live on the wild side
+    config.generators.test_framework false
   end
 end
