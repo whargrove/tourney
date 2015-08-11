@@ -4,11 +4,14 @@ class TournamentsController < ApplicationController
 
   # GET /tournaments
   def index
+    Time.zone = 'Pacific Time (US & Canada)'
+
     @tournaments = Tournament.where('user_id = ?', current_user.id)
   end
 
   # GET /tournaments/1
   def show
+    Time.zone = 'Pacific Time (US & Canada)'
     @user = User.find(@tournament.user_id)
   end
 
@@ -19,6 +22,7 @@ class TournamentsController < ApplicationController
 
   # GET /tournaments/1/edit
   def edit
+    Time.zone = 'Pacific Time (US & Canada)'
   end
 
   # POST /tournaments
