@@ -15,5 +15,6 @@
   <%= @tournament.created_at %>
 </p>
 
+<%= link_to 'Add Player', new_player_path(tournament_id: @tournament.id) %> |
 <%= link_to 'Edit', edit_tournament_path(@tournament) %> |
 <%= link_to 'Back', tournaments_path %>
