@@ -14,8 +14,8 @@
   <%= f.hidden_field :tournament_id, value: @tournament.id %>
 
   <div class="field">
-    <%= f.label :number %><br>
-    <%= f.number_field :number %>
+    <%= f.label :number %>: <%= @next_round %>
+    <%= f.hidden_field :number, value: @next_round %>
   </div>
   <div class="actions">
     <%= f.submit %>

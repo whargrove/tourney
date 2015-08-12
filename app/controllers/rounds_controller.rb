@@ -14,6 +14,7 @@ class RoundsController < ApplicationController
 
   # GET /rounds/new
   def new
+    @next_round = Round.where('tournament_id = ?', @tournament.id).count + 1
     @round = Round.new
   end
 

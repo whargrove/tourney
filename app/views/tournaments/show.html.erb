@@ -17,6 +17,7 @@
 
 <p>There are <%= @player_count %> players in this tournament.</p>
 
+<%= link_to 'New Round', new_round_path(tournament_id: @tournament.id) %> |
 <%= link_to 'Add Player', new_player_path(tournament_id: @tournament.id) %> |
 <%= link_to 'Edit', edit_tournament_path(@tournament) %> |
 <%= link_to 'Back', tournaments_path %>
