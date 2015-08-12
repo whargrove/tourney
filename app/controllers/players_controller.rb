@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
   before_action :authorize
+  before_action :set_tournament, only: [:show, :new]
   before_action :set_player, only: [:show, :edit, :update, :destroy]
 
   # GET /players/1
@@ -9,7 +10,6 @@ class PlayersController < ApplicationController
   # GET /players/new
   def new
     @player = Player.new
-    @tournament = Tournament.where('id = ?', params[:tournament_id]).first
   end
 
   # GET /players/1/edit
@@ -46,6 +46,10 @@ class PlayersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_player
       @player = Player.find(params[:id])
+    end
+
+    def set_tournament
+      @tournament = Tournament.where('id = ?', params[:tournament_id]).first
     end
 
     # Only allow a trusted parameter "white list" through.

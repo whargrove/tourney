@@ -11,9 +11,11 @@
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>Created at:</strong>
   <%= @tournament.created_at %>
 </p>
+
+<p>There are <%= @player_count %> players in this tournament.</p>
 
 <%= link_to 'Add Player', new_player_path(tournament_id: @tournament.id) %> |
 <%= link_to 'Edit', edit_tournament_path(@tournament) %> |
