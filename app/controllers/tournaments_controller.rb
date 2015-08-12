@@ -13,7 +13,7 @@ class TournamentsController < ApplicationController
   def show
     Time.zone = 'Pacific Time (US & Canada)'
     @user = User.find(@tournament.user_id)
-    @player_count = Player.where('tournament_id = ?', @tournament.id).count
+    @players = Player.where('tournament_id = ?', @tournament.id)
   end
 
   # GET /tournaments/new

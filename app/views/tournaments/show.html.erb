@@ -15,7 +15,27 @@
   <%= @tournament.created_at %>
 </p>
 
-<p>There are <%= @player_count %> players in this tournament.</p>
+<h2>Players</h2>
+
+<p>There are <%= @players.count %> players in this tournament.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player.full_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
 
 <%= link_to 'New Round', new_round_path(tournament_id: @tournament.id) %> |
 <%= link_to 'Add Player', new_player_path(tournament_id: @tournament.id) %> |
