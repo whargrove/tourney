@@ -6,4 +6,4 @@
 </p>
 
 <%= link_to 'Edit', edit_round_path(@round) %> |
-<%= link_to 'Back', rounds_path %>
+<%= link_to 'Back', rounds_path(tournament_id: @tournament.id) %>
