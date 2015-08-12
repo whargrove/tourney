@@ -1,6 +1,5 @@
 # TODO
 
-1. Add Round
-2. Add Match
-3. Add Game
-4. Add Pairing
+1. Add Match
+2. Add Game
+3. Add Pairing
