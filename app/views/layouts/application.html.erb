@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Tourney</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Tourney</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<% if current_user %>
-  Signed in as <%= current_user.first_name %> | <%= link_to 'Log out', logout_path %>
-<% else %>
-  <%= link_to 'Log in', login_path %> | <%= link_to 'Sign up', signup_path %>
-<% end %>
-<%= yield %>
+  <% if current_user %>
+    Signed in as <%= current_user.first_name %> | <%= link_to 'Home', root_path %> | <%= link_to 'Log out', logout_path %>
+  <% else %>
+    <%= link_to 'Log in', login_path %> | <%= link_to 'Sign up', signup_path %>
+  <% end %>
 
-</body>
+  <%= yield %>
+
+  </body>
 </html>
