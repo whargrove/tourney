@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :rounds
   root 'tournaments#index'
 
   # Registration
